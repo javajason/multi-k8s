@@ -14,10 +14,10 @@ after_success:
   - docker build -t travisimages/multi-nginx ./nginx
   - docker build -t travisimages/multi-server ./server
   - docker build -t travisimages/multi-worker ./worker
-# Log in to the docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-#Take those images and push them to docker hub
-- docker push travisimages/multi-client
-- docker push travisimages/multi-nginx
-- docker push travisimages/multi-server
-- docker push travisimages/multi-worker
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  #Take those images and push them to docker hub
+  - docker push travisimages/multi-client
+  - docker push travisimages/multi-nginx
+  - docker push travisimages/multi-server
+  - docker push travisimages/multi-worker
