@@ -12,7 +12,7 @@
             "image": "travisimages/multi-server",
             "hostname": "api",
             "essential": false
-        }
+        },
         {
             "name": "worker",
             "image": "travisimages/multi-worker",
