@@ -21,3 +21,16 @@ after_success:
   - docker push travisimages/multi-nginx
   - docker push travisimages/multi-server
   - docker push travisimages/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-west-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-west-1-711629017260
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESSS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  
