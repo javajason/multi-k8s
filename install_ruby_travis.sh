@@ -1,0 +1,5 @@
+docker run -it -v $(pwd):/app ruby:2.3 sh
+gem install travis --no-rdoc --no-ri
+gem install travis
+travis login
+travis encrypt-file service-account.jason
