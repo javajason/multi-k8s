@@ -5,7 +5,7 @@ COPY ./default.conf ./
 RUN npm install
 COPY . .
 RUN npm run build
-COPY build .
+# COPY build .
 # CMD ["npm", "run", "build"]
 
 FROM nginx
