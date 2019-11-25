@@ -2,11 +2,11 @@
 # docker build -t travisimages/multi-worker:latest -t travisimages/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 # docker build -t travisimages/multi-server:latest -t travisimages/multi-server:$SHA -f ./server/Dockerfile ./server
 
-## docker build -t travisimages/multi-client:$SHA -f ./client/Dockerfile ./client
+docker build -t travisimages/multi-client:$SHA -f ./client/Dockerfile ./client
 ## docker build -t travisimages/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 ## docker build -t travisimages/multi-server:$SHA -f ./server/Dockerfile ./server
 
-docker build -t travisimages/multi-client:latest -f ./client/Dockerfile ./client
+## docker build -t travisimages/multi-client:latest -f ./client/Dockerfile ./client
 ## docker build -t travisimages/multi-worker:latest -f ./worker/Dockerfile ./worker
 ## docker build -t travisimages/multi-server:latest -f ./server/Dockerfile ./server
 
