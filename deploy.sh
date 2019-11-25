@@ -10,13 +10,13 @@ docker build -t travisimages/multi-client:latest -f ./client/Dockerfile ./client
 docker build -t travisimages/multi-worker:latest -f ./worker/Dockerfile ./worker
 docker build -t travisimages/multi-server:latest -f ./server/Dockerfile ./server
 
-docker push travisimages/multi-client:latest
-docker push travisimages/multi-server:latest
-docker push travisimages/multi-worker:latest
-
 docker push travisimages/multi-worker:$SHA
 docker push travisimages/multi-client:$SHA
 docker push travisimages/multi-server:$SHA
+
+docker push travisimages/multi-client:latest
+docker push travisimages/multi-server:latest
+docker push travisimages/multi-worker:latest
 
 kubectl apply -f k8s
 # kubectl set image deployments/worker-deployment worker=travisimages/multi-worker:$SHA
