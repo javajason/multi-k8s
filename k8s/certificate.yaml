@@ -1,0 +1,21 @@
+# apiVersion: certmanager.k8s.io/v1alpha1
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: epsteinmachine-tk-tls
+spec:
+  secretName: epsteinmachine-tk
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: epsteinmachine.tk
+  dnsNames:
+    - epsteinmachine.tk
+    - www.epsteinmachine.tk
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - epsteinmachine.tk
+          - www.epsteinmachine.tk
